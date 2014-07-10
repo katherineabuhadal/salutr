@@ -1,8 +1,14 @@
 <h1> My salutes </h1>
 
 <%= current_user.username %>
-<%= button_to "Salute", :salutes %>
 
+<%= form_for @salute  do |form|  %>
+
+  <%= form.collection_select(:receiver_id, User.all, :id, :username) %>
+  <%= form.submit "Salute" %>
+
+  
+<% end %>
 <ul>
   <%= render @salutes %>
 </ul>
