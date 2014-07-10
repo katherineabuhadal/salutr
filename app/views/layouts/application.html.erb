@@ -8,7 +8,12 @@
 </head>
 <body>
 
-<%= yield %>
+<% if signed_in? %>
+  <%= link_to "Sign out", :session, method: :delete %>
+<% else %>
+  <%= link_to "Sign in", [:new, :session] %>
+  <%= link_to "Sign up", [:new, :user] %>
+<% end %><%= yield %>
 
 </body>
 </html>

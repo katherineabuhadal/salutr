@@ -1,0 +1,8 @@
+<h1> My salutes </h1>
+
+<%= current_user.username %>
+<%= button_to "Salute", :salutes %>
+
+<ul>
+  <%= render @salutes %>
+</ul>
