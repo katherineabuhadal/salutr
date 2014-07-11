@@ -2,7 +2,7 @@
 
 <%= current_user.username %>
 
-<%= form_for @salute  do |form|  %>
+<%= form_for @salute, html: { id: "new_salute_form" }  do |form|  %>
 
   <%= form.collection_select(:receiver_id, User.all, :id, :username) %>
   <%= form.submit "Salute" %>

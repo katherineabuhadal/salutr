@@ -1,3 +1,4 @@
+
 class SalutesController < ApplicationController
   def index
     @salutes = current_user.received_salutes.order("created_at DESC")
@@ -6,7 +7,8 @@ class SalutesController < ApplicationController
 
   def create
     @salute = current_user.sent_salutes.create(target_user_params)
-    redirect_to "/salutes"
+    html_salute = render @salute
+    Pusher[target_user_params[:receiver_id].to_s].trigger("new-salute", {:salute => html_salute})
   end
 
   private
