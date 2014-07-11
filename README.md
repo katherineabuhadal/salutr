@@ -7,5 +7,5 @@ It uses websockets via pusher.
 
 ## USE
 
-You can try Salutr on Heroku at ******
+You can try Salutr on Heroku at http://infinite-castle-1119.herokuapp.com/salutes
 

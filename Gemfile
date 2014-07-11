@@ -14,3 +14,4 @@ gem 'dotenv-rails', '~> 0.11.1'
 gem 'monban'
 gem 'monban-generators'
 gem 'pusher'
+gem 'rails_12factor', group: :production
